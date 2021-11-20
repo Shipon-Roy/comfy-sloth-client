@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Order = () => {
     const [order, setOrder] = useState({});
@@ -24,7 +25,9 @@ const Order = () => {
                         <h6>Available : <span>{order.stock}</span></h6>
                         <h6>SKU : <span>{order.sku}</span></h6>
                         <h6>Brand : <span>{order.brand}</span></h6>
+                        <Link to={`/orderNow/${order?._id}`}>
                         <button className="btn btn-warning my-5 px-5">Order Now</button>
+                        </Link>
                     </div>
                 </div>
             </div>
