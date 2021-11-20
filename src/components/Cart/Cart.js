@@ -4,7 +4,7 @@ const Cart = () => {
     const [allOrders, setAllorder] = useState([]);
 
     useEffect( () => {
-        fetch('http://localhost:5000/allOrder')
+        fetch('https://safe-hamlet-38620.herokuapp.com/allOrder')
         .then(res => res.json())
         .then(data => setAllorder(data))
     }, [])
@@ -12,7 +12,7 @@ const Cart = () => {
     const handleDelete = id => {
         const sure = window.confirm('Are you sure, you want to order delete')
         if(sure){
-          fetch(`http://localhost:5000/allOrder/${id}`, {
+          fetch(`https://safe-hamlet-38620.herokuapp.com/allOrder/${id}`, {
           method: 'DELETE'
         })
         .then(res => res.json())

@@ -11,7 +11,7 @@ const OrderNow = () => {
     const { register, handleSubmit, formState: { errors }, } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/orderNow', {
+        fetch('https://safe-hamlet-38620.herokuapp.com/orderNow', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -27,7 +27,7 @@ const OrderNow = () => {
     }
 
     useEffect( () => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://safe-hamlet-38620.herokuapp.com/product/${id}`)
         .then(res => res.json())
         .then(data => setProduct(data[0]))
     }, [id])
